@@ -68,8 +68,23 @@ public class ProductServiceTest {
 
     @Test
     public void testDelete() throws SQLException {
+        Product product = new Product("test1", 4);
+        Product createdProduct = productService.insert(product);
+        productService.delete(createdProduct.getId());
+    }
+    /*
+
+    // lever exception si recherher un produit supprimmer
+    @Test
+    public void testSearchDelete() throws SQLException {
+        Product product = new Product("test1", 4);
+        Product createdProduct = productService.insert(product);
+        assertThrows(RuntimeException.class, () -> productService.findById(createdProduct.getId()));
     }
 
+    private void assertThrows(Class<RuntimeException> runtimeExceptionClass, Object o) {
+    }
+*/
     @Test(expected = RuntimeException.class)
     public void testDeleteNotFound() {
         // Supprimer un produit avec un identifiant non existant
