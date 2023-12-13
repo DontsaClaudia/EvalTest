@@ -8,6 +8,13 @@ public class Product {
     private String label;
     private Integer quantity;
 
+    public Product(String testProduct, int i) {
+    }
+
+    public Product() {
+
+    }
+
     public Integer getId() {
         return id;
     }

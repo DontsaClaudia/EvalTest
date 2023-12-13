@@ -49,6 +49,12 @@ public class ProductServiceTest {
     @Test
     public void testInsert() throws SQLException {
 
+        Product product = new Product("savons", 2);
+        Product createdProduct = productService.insert(product);
+        assertNotNull(createdProduct.getId());
+        assertEquals("savons", createdProduct.getLabel());
+        assertEquals(2, createdProduct.getQuantity().intValue());
+
 
     }
 
@@ -62,6 +68,12 @@ public class ProductServiceTest {
 
     @Test
     public void testDelete() throws SQLException {
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testDeleteNotFound() {
+        // Supprimer un produit avec un identifiant non existant
+        productService.delete(999);
     }
 
 }

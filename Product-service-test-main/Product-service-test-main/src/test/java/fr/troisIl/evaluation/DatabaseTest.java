@@ -31,9 +31,9 @@ public class DatabaseTest {
         assertEquals(db.showTable(), "Product");
     }
 
-    @After
 
     // Fermer la connexion à la base de données après les tests
+    @After
     public  void setDown(){
         try{
             if (db != null)
