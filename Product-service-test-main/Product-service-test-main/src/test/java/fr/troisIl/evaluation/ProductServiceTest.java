@@ -89,7 +89,6 @@ public class ProductServiceTest {
     public void testDeleteNotFound() {
         // Supprimer un produit avec un identifiant non existant
         productService.delete(999);
-
     }
 
 }
