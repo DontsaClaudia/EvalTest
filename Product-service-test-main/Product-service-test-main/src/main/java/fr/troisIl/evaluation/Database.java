@@ -10,6 +10,7 @@ public class Database {
      * Contient la connexion effective à la base de données
      */
     private Connection connection;
+    
     /**
      * Contient le nom du fichier de la BDD sqlite
      */
